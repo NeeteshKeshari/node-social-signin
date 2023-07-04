@@ -84,7 +84,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
   }
 
   return res.redirect(
-    `exp:192.168.1.38:19000?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(
+    `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(
       profilePictureUrl
     )}&email=${email}`
   );
