@@ -109,7 +109,7 @@ app.post("/auth/apple/callback", async (req, res) => {
     } catch (err) {
       console.log(err);
 
-      return res.redirect(`expo://192.168.1.38:19000`);
+      return res.redirect(`com.jobtrees://`);
     }
   } else {
     // we can get only email by decdoing the token for the subsequent requests
@@ -119,7 +119,7 @@ app.post("/auth/apple/callback", async (req, res) => {
 
   console.log({ email, fname, lname });
   return res.redirect(
-    `com.jobtrees://?fname=${fname}&lname=${lname}&email=${email}`
+    `com.jobtrees://?fname=${fname}&lname=${lname}&email=${email}&state=appleSignIn`
   );
 });
 
