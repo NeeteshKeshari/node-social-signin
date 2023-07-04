@@ -6,8 +6,8 @@ const { decode } = require("jsonwebtoken");
 const app = express();
 const port = process.env.PORT || 3000;
 
-const clientId = "ADD_SECRET_SAUCE_HERE";
-const clientSecret = "ADD_SECRET_SAUCE_HERE";
+const clientId = "78rwwnmycnq83l";
+const clientSecret = "Y2PA5ya5w7UycQMs";
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
