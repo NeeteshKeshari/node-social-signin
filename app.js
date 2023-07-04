@@ -28,7 +28,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
         grant_type: "authorization_code",
         code,
         redirect_uri:
-          "https://apple-linkedin-login.onrender.com/auth/linkedin/callback",
+          "https://social-login-3q53.onrender.com/auth/linkedin/callback",
         client_id: clientId,
         client_secret: clientSecret,
       },
