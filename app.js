@@ -77,7 +77,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.redirect(
-      `exp://192.168.1.38:19000?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(
+      `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(
         profilePictureUrl
       )}&email=${email}`
     );
@@ -119,7 +119,7 @@ app.post("/auth/apple/callback", async (req, res) => {
 
   console.log({ email, fname, lname });
   return res.redirect(
-    `exp://192.168.1.38:19000?fname=${fname}&lname=${lname}&email=${email}`
+    `com.jobtrees://?fname=${fname}&lname=${lname}&email=${email}`
   );
 });
 
