@@ -20,7 +20,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
   let lname = "";
   let profilePictureUrl = null;
   let email = "";
-
+  let linkedInAccessToken = "";
   try {
     const accessTokenRequest = await axios.post(
       "https://www.linkedin.com/oauth/v2/accessToken",
@@ -39,6 +39,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
       }
     );
     const accessToken = accessTokenRequest.data.access_token;
+    linkedInAccessToken = accessTokenRequest.data.access_token;
     console.log("accessToken", accessToken);
     const { data } = await axios.get("https://api.linkedin.com/v2/me", {
       headers: {
@@ -78,12 +79,12 @@ app.get("/auth/linkedin/callback", async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.redirect(
-      `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(profilePictureUrl)}&email=${email}&accessToken=${accessToken}`
+      `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(profilePictureUrl)}&email=${email}&accessToken=${linkedInAccessToken}`
     );
   }
 
   return res.redirect(
-    `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(profilePictureUrl)}&email=${email}&accessToken=${accessToken}`
+    `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(profilePictureUrl)}&email=${email}&accessToken=${linkedInAccessToken}`
   );
 });
 
