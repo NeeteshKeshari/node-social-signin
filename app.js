@@ -39,7 +39,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
       }
     );
     const accessToken = accessTokenRequest.data.access_token;
-    console.log("code", code);
+    console.log("accessToken");
     const { data } = await axios.get("https://api.linkedin.com/v2/me", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -78,9 +78,7 @@ app.get("/auth/linkedin/callback", async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.redirect(
-      `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(
-        profilePictureUrl
-      )}&email=${email}`
+      `com.jobtrees://?fname=${fname}&lname=${lname}&photoUrl=${encodeURIComponent(profilePictureUrl)}&email=${email}&accessToken=${accessToken}`
     );
   }
 
