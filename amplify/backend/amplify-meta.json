@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nodesocialsignin-dev-122537-authRole",
+      "UnauthRoleArn": "arn:aws:iam::864772161223:role/amplify-nodesocialsignin-dev-122537-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::864772161223:role/amplify-nodesocialsignin-dev-122537-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nodesocialsignin-dev-122537-deployment",
+      "UnauthRoleName": "amplify-nodesocialsignin-dev-122537-unauthRole",
+      "StackName": "amplify-nodesocialsignin-dev-122537",
+      "StackId": "arn:aws:cloudformation:us-east-1:864772161223:stack/amplify-nodesocialsignin-dev-122537/4a214a50-1c93-11ee-8922-1228c6fcdf95",
+      "AmplifyAppId": "d1qzllejxnqkby"
+    }
+  }
+}
